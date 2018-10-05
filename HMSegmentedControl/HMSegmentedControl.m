@@ -147,8 +147,8 @@
     self.type = HMSegmentedControlTypeText;
     self.verticalDividerWidth = 1.0f;
     _verticalDividerColor = [UIColor blackColor];
-    self.borderColor = [UIColor blackColor];
-    self.borderWidth = 1.0f;
+    self.segmentBorderColor = [UIColor blackColor];
+    self.segmentBorderWidth = 1.0f;
     
     self.shouldAnimateUserSelection = YES;
     
@@ -522,26 +522,26 @@
     // Border layer
     if (self.borderType & HMSegmentedControlBorderTypeTop) {
         CALayer *borderLayer = [CALayer layer];
-        borderLayer.frame = CGRectMake(0, 0, fullRect.size.width, self.borderWidth);
-        borderLayer.backgroundColor = self.borderColor.CGColor;
+        borderLayer.frame = CGRectMake(0, 0, fullRect.size.width, self.segmentBorderWidth);
+        borderLayer.backgroundColor = self.segmentBorderColor.CGColor;
         [backgroundLayer addSublayer: borderLayer];
     }
     if (self.borderType & HMSegmentedControlBorderTypeLeft) {
         CALayer *borderLayer = [CALayer layer];
-        borderLayer.frame = CGRectMake(0, 0, self.borderWidth, fullRect.size.height);
-        borderLayer.backgroundColor = self.borderColor.CGColor;
+        borderLayer.frame = CGRectMake(0, 0, self.segmentBorderWidth, fullRect.size.height);
+        borderLayer.backgroundColor = self.segmentBorderColor.CGColor;
         [backgroundLayer addSublayer: borderLayer];
     }
     if (self.borderType & HMSegmentedControlBorderTypeBottom) {
         CALayer *borderLayer = [CALayer layer];
-        borderLayer.frame = CGRectMake(0, fullRect.size.height - self.borderWidth, fullRect.size.width, self.borderWidth);
-        borderLayer.backgroundColor = self.borderColor.CGColor;
+        borderLayer.frame = CGRectMake(0, fullRect.size.height - self.segmentBorderWidth, fullRect.size.width, self.segmentBorderWidth);
+        borderLayer.backgroundColor = self.segmentBorderColor.CGColor;
         [backgroundLayer addSublayer: borderLayer];
     }
     if (self.borderType & HMSegmentedControlBorderTypeRight) {
         CALayer *borderLayer = [CALayer layer];
-        borderLayer.frame = CGRectMake(fullRect.size.width - self.borderWidth, 0, self.borderWidth, fullRect.size.height);
-        borderLayer.backgroundColor = self.borderColor.CGColor;
+        borderLayer.frame = CGRectMake(fullRect.size.width - self.segmentBorderWidth, 0, self.segmentBorderWidth, fullRect.size.height);
+        borderLayer.backgroundColor = self.segmentBorderColor.CGColor;
         [backgroundLayer addSublayer: borderLayer];
     }
 }
